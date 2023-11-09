@@ -205,3 +205,10 @@ survived_male_rate = survived_male.aggregate(lambda x: sum(x)/len(x),'fare')
 print(survived_male_rate)
 survived_female_rate = survived_female.aggregate(lambda x: sum(x)/len(x),'fare')
 print(survived_female_rate)
+
+print('#Find the total number of male passengers embarked at Southampton')
+male_southampton = table5.filter(lambda x: x['gender'] == 'M' and x['embarked'] == 'Southampton')
+print(male_southampton.table)
+number_of_males = len(male_southampton.table)
+print(number_of_males)
+
